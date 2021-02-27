@@ -14,250 +14,295 @@
 </head>
 
 <body>
-
-
-   <!-- BEGIN BODY -->
-
    <div class="main-wrapper">
-      <!-- BEGIN CONTENT -->
+      <aside class="sidebar">
+         <header class="sidebar__header">
+            <h2 class="sidebar__title">Menu</h2>
+         </header>
+         <nav class="sidebar__menu-wrap">
+            <ul class="sidebar__menu-list">
+               <li class="sidebar__menu-item">
+                  <a href="#input-vs-button" class="sidebar__menu-link">Tag input vs tag button</a>
+               </li>
+               <li class="sidebar__menu-item">
+                  <a href="#queryselectorall" class="sidebar__menu-link">Document.querySelectorAll()</a>
+               </li>
+               <li class="sidebar__menu-item">
+                  <a href="#elementqueryselectorall" class="sidebar__menu-link">Element.querySelectorAll()</a>
+               </li>
+               <li class="sidebar__menu-item">
+                  <a href="#queryselector" class="sidebar__menu-link">Document.querySelector()</a>
+               </li>
+               <li class="sidebar__menu-item">
+                  <a href="#elementqueryselector" class="sidebar__menu-link">Element.querySelector()</a>
+               </li>
+            </ul>
+         </nav>
+      </aside>
       <main class="content">
          <div class="wrapper">
-            <div class="inner">
-               <section class="card">
-                  <h1 class="card__title card__title_primary">For gamers by gamers TEE</h1>
-                  <div class="card__wrap">
-                     <div class="card__img-wrap">
-                        <picture class="card__img-picture">
-                           <source srcset="img/good-desktop.jpg" media="(min-width: 934px)">
-                           <source srcset="img/good-tablet.jpg" media="(min-width: 716px)">
-                           <source srcset="img/good-mobile.jpg" media="(min-width: 0px)">
-                           <img src="img/good-desktop.jpg" alt="" class="card__img">
-                        </picture>
-                        <ul class="card__share-list card__share-list_secondary">
-                           <li class="card__share-item card__share-item_secondary">
-                              <a href="" class="card__share-link">
-                                 <img src="img/fb-icon.png" alt="" class="cadr__share-icon">
-                              </a>
-                           </li>
-                           <li class="card__share-item card__share-item_secondary">
-                              <a href="" class="card__share-link">
-                                 <img src="img/twitter-icon.png" alt="" class="cadr">
-                              </a>
-                           </li>
-                           <li class="card__share-item card__share-item_secondary">
-                              <a href="" class="card__share-link">
-                                 <img src="img/pinterest-icon.png" alt="" class="cadr__share-icon">
-                              </a>
-                           </li>
-                           <li class="card__share-item card__share-item_secondary">
-                              <a href="" class="card__share-link">
-                                 <img src="img/youtube-icon.png" alt="" class="cadr__share-icon">
-                              </a>
-                           </li>
-                           <li class="card__share-item card__share-item_secondary">
-                              <a href="" class="card__share-link">
-                                 <img src="img/instagram-icon.png" alt="" class="cadr__share-icon">
-                              </a>
-                           </li>
-                        </ul>
+            <header class="header">
+               <h1 class="header__title">List of questions</h1>
+            </header>
+            <article id="input-vs-button" class="article">
+               <h2 class="article__title">Tag input vs tag button</h2>
+               <section class="article__content">
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Основные отличия
+                     </h3>
+                     <div class="article__subsection-content">
+                        <p class="article__subsection-text">
+                           Тег <strong>&lt;button&gt;</strong> по умолчанию имеет <strong>type="submit"</strong> и он
+                           отправляет форму.
+                        </p>
+                        <p class="article__subsection-text">
+                           Тег <strong>&lt;input&gt;</strong> по умолчанию имеет <strong>type="text"</strong> и чтобы
+                           это
+                           была кнопка отправляющая форму тег должен иметь <strong>type="submit"</strong>
+                        </p>
+                        <p class="article__subsection-text">
+                           Чтобы убрать у тегов <strong>&lt;input&gt;</strong> и <strong>&lt;button&gt;</strong>
+                           предопределенное поведение они должны иметь <strong>type="button"</strong> <br>
+                           (It can have client-side scripts associated with the element's events, which are triggered
+                           when
+                           the events occur.)
+                        </p>
+                        <p class="article__subsection-text">
+                           Если у тегов <strong>&lt;input&gt;</strong> и <strong>&lt;button&gt;</strong> назначен
+                           <strong>form="id-of-related-form-to-submit"</strong> и <strong>type="submit"</strong>, то
+                           кнопки
+                           могут лежать в любом месте документа и при этом отправлять форму у которой
+                           <strong>id="id-of-related-form-to-submit"</strong>
+                        </p>
                      </div>
-   
-                     <div class="card__content">
-                        <h1 class="card__title card__title_secondary">For gamers by gamers TEE</h1>
-                        <div class="card__info">
-                           <form action="card.php" method="POST" name="card-form">
-                              <div class="card__id">Item #: 701642853695</div>
-                              <div class="card__prices">
-                                 <div class="card__price-full">$<span class="lined">29.50</span></div>
-                                 <div class="card__price-discounted">$19.99</div>
-                              </div>
-                              <div class="card__share-rate">
-                                 <ul class="card__rate">
-                                    <li class="card__rate-item"></li>
-                                    <li class="card__rate-item"></li>
-                                    <li class="card__rate-item"></li>
-                                    <li class="card__rate-item"></li>
-                                    <li class="card__rate-item"></li>
-                                 </ul>
-                                 <div class="card__share">
-                                    <div class="card__share-open-btn" id="js-share-open-btn">Share it!</div>
-                                    <div class="card__share-inner" id="js-share-inner">
-                                       <div class="card__share-inner-triangle"></div>
-                                       <div class="card__share-inner-header">
-                                          <div class="card__share-text">Share with</div>
-                                          <div class="card__share-close-btn" id="js-share-close-btn"></div>
-                                       </div>
-                                       <ul class="card__share-list card__share-list_primary">
-                                          <li class="card__share-item">
-                                             <a href="" class="card__share-link">
-                                                <img src="img/fb-icon.png" alt="" class="cadr__share-icon">
-                                             </a>
-                                          </li>
-                                          <li class="card__share-item">
-                                             <a href="" class="card__share-link">
-                                                <img src="img/twitter-icon.png" alt="" class="cadr">
-                                             </a>
-                                          </li>
-                                          <li class="card__share-item">
-                                             <a href="" class="card__share-link">
-                                                <img src="img/pinterest-icon.png" alt="" class="cadr__share-icon">
-                                             </a>
-                                          </li>
-                                          <li class="card__share-item">
-                                             <a href="" class="card__share-link">
-                                                <img src="img/youtube-icon.png" alt="" class="cadr__share-icon">
-                                             </a>
-                                          </li>
-                                          <li class="card__share-item">
-                                             <a href="" class="card__share-link">
-                                                <img src="img/instagram-icon.png" alt="" class="cadr__share-icon">
-                                             </a>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="card__descr-title">
-                                 Details:
-                              </div>
-                              <p class="card__descr">
-                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                 ut
-                                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                                 voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                              </p>
-                              <div class="card__sizes">
-                                 <div class="card__sizes-title-short">Size:</div>
-                                 <div class="card__sizes-title">Select a size:</div>
-                                 <ul class="card__sizes-list">
-                                    <li class="card__sizes-item">
-                                       <input type="radio" name="card-size" value="card-size-1" id="card__sizes-radio-1"
-                                          class="card__sizes-radio">
-                                       <label for="card__sizes-radio-1" class="card__sizes-label">XS</label>
-                                    </li>
-                                    <li class="card__sizes-item">
-                                       <input type="radio" name="card-size" value="card-size-2" id="card__sizes-radio-2"
-                                          class="card__sizes-radio">
-                                       <label for="card__sizes-radio-2" class="card__sizes-label">S</label>
-                                    </li>
-                                    <li class="card__sizes-item">
-                                       <input type="radio" name="card-size" value="card-size-3" id="card__sizes-radio-3"
-                                          class="card__sizes-radio">
-                                       <label for="card__sizes-radio-3" class="card__sizes-label">M</label>
-                                    </li>
-                                    <li class="card__sizes-item">
-                                       <input type="radio" name="card-size" value="card-size-4" id="card__sizes-radio-4"
-                                          class="card__sizes-radio" checked>
-                                       <label for="card__sizes-radio-4" class="card__sizes-label">L</label>
-                                    </li>
-                                 </ul>
-                              </div>
-                              <div class="card__btn-wrap">
-                                 <button class="card__btn card__btn_js" name="add-to-cart" value="add-to-cart">Add to
-                                    cart</button>
-                              </div>
-                           </form>
-                        </div>
+                  </section>
+                  <aside class="article__links">
+                     <h3 class="article__links-title">
+                        Ссылки
+                     </h3>
+                     <div class="article__links-content">
+                        <p class="article__links-text">
+                           <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/button" target="_blank"
+                              class="article__link">Читать про тег <strong>button</strong> на developer.mozilla.org</a>
+                        </p>
+                        <p class="article__links-text">
+                           <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input" target="_blank"
+                              class="article__link">Читать про тег <strong>input</strong> на developer.mozilla.org</a>
+                        </p>
                      </div>
-                  </div>
-   
+                  </aside>
                </section>
-   
-               <section class="related">
-                  <h2 class="related__title">You may also like</h2>
-                  <div class="related__wrap">
-                     <ul class="related__list js-related-slider">
-                        <li class="related__item">
-                           <a href="" class="related__link">
-                              <div class="related__item-inner">
-                                 <div class="related__img-wrap">
-                                    <img src="img/img-1.jpg" alt="" class="related__img">
-                                 </div>
-                                 <div class="related__prices">
-                                    <div class="related__price-full-lined">$<span class="lined">29.50</span></div>
-                                    <div class="related__price-current related__price-current_discounted">$19.99</div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-   
-                        <li class="related__item">
-                           <a href="" class="related__link">
-                              <div class="related__item-inner">
-                                 <div class="related__img-wrap">
-                                    <img src="img/img-2.jpg" alt="" class="related__img">
-                                 </div>
-                                 <div class="related__prices">
-                                    <div class="related__price-current">$22.00</div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-   
-                        <li class="related__item">
-                           <a href="" class="related__link">
-                              <div class="related__item-inner">
-                                 <div class="related__img-wrap">
-                                    <img src="img/img-3.jpg" alt="" class="related__img">
-                                 </div>
-                                 <div class="related__prices">
-                                    <div class="related__price-current">$24.99</div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-   
-                        <li class="related__item">
-                           <a href="" class="related__link">
-                              <div class="related__item-inner">
-                                 <div class="related__img-wrap">
-                                    <img src="img/img-4.jpg" alt="" class="related__img">
-                                 </div>
-                                 <div class="related__prices">
-                                    <div class="related__price-full-lined">$<span class="lined">29.99</span></div>
-                                    <div class="related__price-current related__price-current_discounted">$19.99</div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-   
-                        <li class="related__item">
-                           <a href="" class="related__link">
-                              <div class="related__item-inner">
-                                 <div class="related__img-wrap">
-                                    <img src="img/img-5.jpg" alt="" class="related__img">
-                                 </div>
-                                 <div class="related__prices">
-                                    <div class="related__price-current">$60.00</div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-   
-                        <li class="related__item">
-                           <a href="" class="related__link">
-                              <div class="related__item-inner">
-                                 <div class="related__img-wrap">
-                                    <img src="img/img-6.jpg" alt="" class="related__img">
-                                 </div>
-                                 <div class="related__prices">
-                                    <div class="related__price-current">$54.00</div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
+            </article>
+
+            <article id="queryselectorall" class="article article_dark">
+               <h2 class="article__title">Document.querySelectorAll()</h2>
+               <section class="article__content">
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Основная информация
+                     </h3>
+                     <div class="article__subsection-content">
+                        <p class="article__subsection-text">
+                           Метод <strong>querySelectorAll()</strong> Document возвращает <strong>статический (не
+                              динамический)</strong> NodeList, <strong>содержащий все найденные элементы</strong>
+                           документа, которые соответствуют указанному селектору.
+                        </p>
+                        <p class="article__subsection-text">
+                           <i>Статическая коллекция означает что любые изменения в DOM не отражаются на его
+                              содержании.</i>
+                        </p>
+                        <p class="article__subsection-text">
+                           <strong>Примечание:</strong> Если в строке selectors содержатся CSS псевдоэлементы, то
+                           возвращаемый список будет всегда пуст.
+                        </p>
+                        <!-- <p class="article__subsection-text">
+                           
+                        </p> -->
+                     </div>
+                  </section>
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Примеры:
+                     </h3>
+                     <div class="article__subsection-content">
+                        <pre
+                           class="article__pre-text">const matches = document.querySelectorAll("div.note, div.alert");</pre>
+                        <pre class="article__pre-text">
+matches.forEach(function(item) {
+   // do something
+});</pre>
+                        <pre class="article__pre-text">
+&lt;div class="outer"&gt;
+   &lt;div class="select"&gt;
+      &lt;div class="inner"&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+const select = document.querySelector('.select');
+const inner = select.querySelectorAll('.outer .inner');
+inner.length; // 1, не 0!</pre>
+                        <p class="article__subsection-text">
+                           ".inner" был всё равно найден, хотя .outer не является потомком элемента в котором происходил
+                           поиск (".select"). По-умолчанию, querySelectorAll() проверяет только последний элемент без
+                           учёта контекста.
+                        </p>
+                     </div>
+                  </section>
+                  <aside class="article__links">
+                     <h3 class="article__links-title">
+                        Ссылки
+                     </h3>
+                     <div class="article__links-content">
+                        <p class="article__links-text">
+                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll"
+                              target="_blank" class="article__link">Читать про
+                              <strong>document.querySelectorAll()</strong> на developer.mozilla.org</a>
+                        </p>
+                     </div>
+                  </aside>
                </section>
-            </div>
+            </article>
+
+            <article id="elementqueryselectorall" class="article">
+               <h2 class="article__title">Element.querySelectorAll()</h2>
+               <section class="article__content">
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Основная информация
+                     </h3>
+                     <div class="article__subsection-content">
+                        <p class="article__subsection-text">
+                           Метод <strong>element.querySelectorAll()</strong> возвращает <strong>список типа
+                              NodeList</strong>, состоящий из <strong>всех элементов, которые являются потомками для
+                              элемента</strong>, над которым была выполнена функция и удовлетворяющим условию выборки.
+                        </p>
+                     </div>
+                  </section>
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Примеры:
+                     </h3>
+                     <div class="article__subsection-content">
+                        <pre class="article__pre-text">
+const el = document.querySelector('#test');
+
+const matches = el.querySelectorAll('div.highlighted > p');</pre>
+                        <p class="article__subsection-text">
+                           Этот пример возвращает список всех элементов с тегом p, которые находятся непосредственно в
+                           элементах-контейнерах с тегом div, имеющих класс 'highlighted', которые в свою очередь
+                           находятся внутри элемента с идентификатором 'test'
+                        </p>
+                     </div>
+                  </section>
+                  <aside class="article__links">
+                     <h3 class="article__links-title">
+                        Ссылки
+                     </h3>
+                     <div class="article__links-content">
+                        <p class="article__links-text">
+                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/querySelectorAll"
+                              target="_blank" class="article__link">Читать про
+                              <strong>element.querySelectorAll()</strong> на developer.mozilla.org</a>
+                        </p>
+                     </div>
+                  </aside>
+               </section>
+            </article>
+
+            <article id="queryselector" class="article article_dark">
+               <h2 class="article__title">Document.querySelector()</h2>
+               <section class="article__content">
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Основная информация
+                     </h3>
+                     <div class="article__subsection-content">
+                        <p class="article__subsection-text">
+                           Метод <strong>querySelector()</strong> возвращает <strong>первый элемент документа</strong>,
+                           который соответствует указанному селектору или группе селекторов. Если совпадений не найдено,
+                           возвращает значение <strong>null</strong>.
+                        </p>
+                        <p class="article__subsection-text">
+                           Если указанный селектор соответствует идентификатору, который неправильно используется более
+                           одного раза в документе, возвращается первый элемент с этим идентификатором.
+                        </p>
+                        <p class="article__subsection-text">
+                           Псевдо-элементы CSS никогда не вернут никаких элементов, как указано в API селекторов.
+                        </p>
+                     </div>
+                  </section>
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Примеры:
+                     </h3>
+                     <div class="article__subsection-content">
+                        <pre class="article__pre-text">const el = document.querySelector(".myclass");
+
+const el = document.querySelector("div.user-panel.main input[name=login]");</pre>
+                     </div>
+                  </section>
+                  <aside class="article__links">
+                     <h3 class="article__links-title">
+                        Ссылки
+                     </h3>
+                     <div class="article__links-content">
+                        <p class="article__links-text">
+                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector"
+                              target="_blank" class="article__link">Читать про
+                              <strong>document.querySelector()</strong> на developer.mozilla.org</a>
+                        </p>
+                     </div>
+                  </aside>
+               </section>
+            </article>
+
+            <article id="elementqueryselector" class="article">
+               <h2 class="article__title">Element.querySelector()</h2>
+               <section class="article__content">
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Основная информация
+                     </h3>
+                     <div class="article__subsection-content">
+                        <p class="article__subsection-text">
+                           Метод <strong>element.querySelector()</strong> возвращает <strong>первый элемент, являющийся
+                              потомком элемента</strong>, на который применено правило указанной группы селекторов.
+                        </p>
+                        <p class="article__subsection-text">
+                           <strong>Возвращает null если совпадения не найдены</strong>, иначе первый найденный элемент.
+                        </p>
+                     </div>
+                  </section>
+                  <section class="article__subsection">
+                     <h3 class="article__subsection-title">
+                        Примеры:
+                     </h3>
+                     <div class="article__subsection-content">
+                        <pre class="article__pre-text">const el = document.body.querySelector("style[type='text/css'], style:not([type])");</pre>
+                        <p class="article__subsection-text">
+                           Данный пример получает первый элемент style, который не имеет атрибута type или этот атрибут равен text/css, в теле (body) HTML документа
+                        </p>
+                     </div>
+                  </section>
+                  <aside class="article__links">
+                     <h3 class="article__links-title">
+                        Ссылки
+                     </h3>
+                     <div class="article__links-content">
+                        <p class="article__links-text">
+                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/querySelector"
+                              target="_blank" class="article__link">Читать про
+                              <strong>element.querySelector()</strong> на developer.mozilla.org</a>
+                        </p>
+                     </div>
+                  </aside>
+               </section>
+            </article>
          </div>
       </main>
-      <!-- CONTENT EOF   -->
    </div>
-
-   <div class="icon-load"></div>
-   <!-- BODY EOF   -->
 
    <script src="js/jquery-3.0.0.min.js"></script>
    <script src="js/jquery-migrate-1.4.1.min.js"></script>

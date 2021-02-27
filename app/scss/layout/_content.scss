@@ -6,51 +6,37 @@ body {
 body {
    font-family: $base-font-family;
    font-weight: 400;
-   letter-spacing: 1.05px;
-}
-.main-wrapper {
-   padding: 0;
-   min-width: $min-width;
-   width: 100%;
-   position: relative;
-   overflow: hidden;
-   min-height: 100%;
-}
-.wrapper {
-   min-width: $min-width;
-   max-width: $max-width;
-   padding: 0;
-   margin: 0 auto;
-   position: relative;
+   letter-spacing: 1.4;
 }
 
 /* titles */
 p {
    @include font($base-font-size, $base-line-height, $text-color-primary);
-   padding: 15px 0 15px 0;
+   margin: 0;
+   padding: 0;
+   font-weight: 400;
+   letter-spacing: 1.05px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: $custom-font-family;
+   margin: 0;
+   padding: 0;
    font-weight: 400;
    letter-spacing: 1.05px;
 }
 h1 {
    @include font($font-size-h1, $line-height-h1, $text-color-secondary);
-   font-family: $custom-font-family;
-   padding: 15px 0 15px 0;
-   font-weight: 400;
-   letter-spacing: 1.05px;
 }
 h2 {
    @include font($font-size-h2, $line-height-h2, $text-color-secondary);
-   font-family: $custom-font-family;
-   padding: 15px 0 15px 0;
-   font-weight: 400;
-   letter-spacing: 1.05px;
 }
 h3 {
    @include font($font-size-h3, $line-height-h3, $text-color-secondary);
-   font-family: $custom-font-family;
-   padding: 15px 0 15px 0;
-   font-weight: 400;
-   letter-spacing: 1.05px;
 }
 
 ul,
@@ -74,742 +60,112 @@ img {
 |                                     CONTENT                                 |
 ================================================================================
 */
+
+.main-wrapper {
+   padding: 0;
+   min-width: $min-width;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   min-height: 100%;
+}
+.wrapper {
+   min-width: $min-width;
+}
+
 .content {
    min-width: $min-width;
    text-align: left;
    width: 100%;
+   height: 100vh;
+   overflow-y: auto;
    background: $base-bg;
 }
 
-.card {
+.sidebar {
+   width: $menu-width;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   background-color: #292c34;
+   font-size: 17px;
+   line-height: 1.4;
+   * {
+      color: #fff;
+      padding: 0;
+      margin: 0;
+   }
+   &__header {
+      background-color: #1f232b;
+      display: flex;
+      align-items: center;
+      height: $header-height;
+      padding: 0 0 0 $menu-left-indent-desk;
+   }
+   &__menu-item {
+      padding: 10px 10px 10px $menu-left-indent-desk;
+   }
+}
+
+.header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: $header-height;
+   background-color: #292c34;
+   * {
+      color: #fff;
+   }
+}
+
+.article {
+   padding: 20px $menu-width 20px ($menu-width + 20px);
+   border: 1px solid transparent;
+
    &__title {
-      @include font(24px, 1.52, $text-color-primary, 1.05px);
-      text-transform: uppercase;
-      font: {
-         family: "oswald-bold";
-         weight: bold;
-      }
-      &_primary {
-         padding: 32px 80px 19px 38px;
-      }
-      &_secondary {
-         display: none;
-         @include font(24px, 1.52, $text-color-secondary, 1.05px);
-         padding: 0;
-      }
+      margin: 0 0 15px;
+   }
+   &__subsection-text,
+   &__pre-text {
+      margin-bottom: 15px;
+   }
+   &__pre-text {
+      font-weight: bold;
+      padding: 20px 20px 20px 15px;
+      border-left: 6px solid $base-blue-color;
+      background-color: #f0f0f0;
+      color: #414141;
+   }
+   &__subsection-title {
+      margin-bottom: 10px;
    }
    &__content {
-      width: 82%;
-      margin: 0 auto;
+      padding: 0 0 0 20px;
    }
-   &__img-wrap {
-      position: relative;
+   &__links {
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
    }
-   &__img-picture {
-      display: block;
-   }
-   &__id {
-      @include font(12px, 1.4, $text-color-secondary, 0.58px);
-      padding: 15px 0 0 0;
-   }
-   &__prices {
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-      @include font(36px, 1.4, $text-color-secondary, 0.35px);
-      display: flex;
-      padding: 4px 0 0 0;
-   }
-   &__price-full {
-      padding: 0 18px 0 0;
-   }
-   &__price-discounted {
-      color: $alert-color;
-   }
-
-   &__rate {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-      margin: 0 0 35px 0;
-   }
-   &__rate-item {
-      position: relative;
-      width: 18px;
-      height: 18px;
-      &:before {
-         content: "\2605";
-         display: block;
-         position: absolute;
-         top: 0;
-         left: 0;
-         font-size: 23px;
-         color: #ababab;
-         padding: 0 0 0 1px;
-         @include transition(all 0.6s ease 0s);
-      }
-
-      &:hover:before,
-      &:hover ~ &:before {
-         color: $alert-color;
-      }
-   }
-
-   &__share-open-btn {
-      display: none;
-      margin-top: 9px;
-      @include font(18px, 1, $base-blue-color, 1px);
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-   }
-
-   &__share-open-btn,
-   &__share-inner-header {
-      display: none;
-   }
-   &__share-list {
-      display: flex;
-      justify-content: flex-start;
-   }
-   &__share-item {
-      width: 41px;
-      height: 41px;
-      margin: 0 16px 0 0;
-      @include radius(50%);
-      // layout issue fixing start
-      &:nth-child(2n) {
-         margin-right: 15px;
-      }
-      // layout issue fixing end
-   }
-   &__share-link,
-   &__share-icon {
-      display: block;
-      width: 100%;
-      height: 100%;
-   }
-
-   &__share-list_secondary {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      z-index: 1;
-   }
-   &__share-item_secondary {
+   &__links-title {
       margin-bottom: 10px;
-      margin-right: 0;
    }
-   &__share-item_secondary:nth-child(2n) {
-      margin-right: 0;
-   }
-   &__share-item_secondary:last-child {
-      margin-bottom: 0;
-   }
-
-   &__descr-title {
-      display: none;
-   }
-   &__descr {
-      @include font(14px, 1.45, $text-color-primary, 0.39px);
-      margin: 14px 0 0 3px;
-   }
-
-   &__sizes {
-      padding: 19px 0 0 0;
-   }
-   &__sizes-title-short {
-      display: none;
-      @include font(14px, 1, $text-color-secondary, 1px);
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-      text-transform: uppercase;
-   }
-   &__sizes-title {
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-      @include font(20px, 1.45, $text-color-secondary, 1.05px);
-      text-align: center;
-      text-transform: uppercase;
-      // layout issue fixing start
-      position: relative;
-      left: -1px;
-      // layout issue fixing end
-   }
-   &__sizes-list {
-      display: flex;
-      justify-content: center;
-      margin: 11px 0 0;
-   }
-   &__sizes-item {
-      position: relative;
-      width: 39px;
-      height: 39px;
-      cursor: pointer;
-      @include transition(all 0.6s ease 0s);
-      margin: 0 13.5px;
-      // layout issue fixing start
-      &:nth-child(1) {
-         margin-left: 9px;
-      }
-      &:nth-child(4) {
-         margin-left: 14px;
-      }
-      // layout issue fixing end
-   }
-   &__sizes-radio {
-      display: none;
-   }
-   &__sizes-label {
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-transform: uppercase;
-      @include font(10px, 1.45, $text-color-secondary, 1.05px);
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-      @include radius(50%);
-      border: 1px solid $text-color-secondary;
-      @include transition(all 0.6s ease 0s);
-      background-color: #fff;
-   }
-   /* put hover inside nested class name? */
-   &__sizes-item:hover &__sizes-label,
-   &__sizes-radio:checked + &__sizes-label {
-      background-color: $text-color-secondary;
-      color: #fff;
-      border-color: #999ba1;
-   }
-
-   &__btn-wrap {
-      padding: 29px 0 30px;
-      display: flex;
-      justify-content: center;
-   }
-   &__btn {
-      @include font(18px, 1.4 $text-color-secondary, 1px);
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-      background: $base-green-color;
-      @include radius(27.5px);
-      width: 280px;
-      padding: 16px 0;
-      text-transform: uppercase;
-      text-align: center;
-      border: none;
-      letter-spacing: 1.2px;
-      cursor: pointer;
-      // layout issue fixing start
-      position: relative;
-      left: -1px;
-      padding-right: 8px;
-      // layout issue fixing end
-   }
-}
-
-.related {
-   padding: 50px 0 20px;
-   &__title {
-      @include font(24px, 1.4, $text-color-secondary, 1.5px);
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-      text-transform: uppercase;
-      text-align: center;
-      margin: 0 0 15px 0;
-      /* layout issue fixing start */
-      padding: 0 6px 0 0;
-      /* layout issue fixing end */
-   }
-   &__arrow {
-      width: 27px;
-      height: 50px;
-      border: none;
-      outline: none;
-      position: absolute;
-      top: 50%;
-      z-index: 1;
-      margin-top: -26px;
-      background-color: transparent;
-   }
-   &__arrow_left {
-      left: -38px;
-      background-image: url("../img/left-arrow.png");
-   }
-   &__arrow_right {
-      right: -38px;
-      background-image: url("../img/right-arrow.png");
-   }
-   &__list {
-      width: 280px;
-      margin: 0 auto;
-      /* layout issue fixing start */
-      position: relative;
-      left: -6px;
-      /* layout issue fixing end */
-   }
-   &__link {
-      display: block;
-   }
-   &__item-inner {
-      position: relative;
-   }
-   &__prices {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(138, 230, 207, 0.8);
-      display: flex;
-      justify-content: center;
-      @include font(18px, 30px, $text-color-secondary, 1.1px);
-      font: {
-         family: "opensans-bold";
-         weight: bold;
-      }
-   }
-   &__price-full-lined {
-      display: none;
-   }
-   &__price-full-lined {
-      padding: 0 11px 0 0;
-   }
-   &__price-current_discounted {
-      color: $alert-color;
-   }
-   &__img-wrap {
-      width: 280px;
-      height: 265px;
-   }
-   &__img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      max-width: 100%;
-   }
-}
-
-// tablet styles
-@media screen and (min-width: 716px) {
-   .inner {
-      margin-left: 38px;
-      margin-right: 36px;
-   }
-
-   .card {
-      &__wrap {
-         display: flex;
-      }
-      &__title_primary {
-         padding: 37px 1px 18px 1px;
-         letter-spacing: 1.22px;
-      }
-      &__img-wrap {
-         flex: 0 0 334px;
-      }
-
-      &__share-list_primary {
-         display: none;
-      }
-      &__share-list_secondary {
-         display: flex;
-      }
-
-      &__content {
-         flex: 1 1 auto;
-         padding-left: 19px;
-      }
-      &__id {
-         padding-top: 0;
-         margin-top: -1px;
-         font-size: 11px;
-         line-height: 1;
-         letter-spacing: 0.4px;
-      }
-      &__prices {
-         padding-top: 7px;
-         padding-bottom: 3px;
-         margin-left: -1px;
-      }
-      &__price-full {
-         padding-right: 27px;
-      }
-      &__rate {
+   &__links-text {
+      margin-bottom: 10px;
+      &:last-child {
          margin-bottom: 0;
       }
-      &__descr-title {
-         display: block;
-         @include font(14px, 1.45, $text-color-primary, 0.39px);
-         font: {
-            family: "opensans-bold";
-            weight: bold;
-         }
-         text-transform: uppercase;
-         margin: 27px 0 0 1px;
-      }
-      &__descr {
-         margin-top: 0;
-         margin-left: 1px;
-         padding-top: 6px;
-         font-size: 12px;
-         line-height: 1.4;
-         letter-spacing: 0.13px;
-      }
-      &__sizes {
-         padding-top: 12px;
-      }
-      &__sizes-title {
-         font-size: 14px;
-         text-align: left;
-         padding-left: 2px;
-         left: 0;
-         letter-spacing: 0.95px;
-      }
-      &__sizes-list {
-         justify-content: flex-start;
-         margin-top: 10px;
-      }
-      &__sizes-item {
-         margin-left: 10px;
-         margin-right: 11px;
-      }
-      &__sizes-item:nth-child(1) {
-         margin-left: 1px;
-      }
-      &__sizes-item:nth-child(3) {
-         margin-left: 11px;
-      }
-      &__sizes-item:nth-child(4) {
-         margin-left: 12px;
-      }
-
-      &__btn-wrap {
-         padding-top: 19px;
-         justify-content: flex-start;
-      }
-      &__btn {
-         width: 222px;
-         padding-top: 9px;
-         padding-bottom: 10px;
-         padding-right: 5px;
-         letter-spacing: 0.9px;
-      }
    }
 
-   .related {
-      padding-top: 25px;
-      &__wrap {
-         margin-left: 10px;
+   &_dark {
+      background-color: #383b42;
+      * {
+         color: $base-bg;
       }
-      &__title {
-         font-size: 22px;
-         padding-right: 12px;
-         letter-spacing: 2.2px;
-         margin-bottom: 28px;
-      }
-      &__list {
-         width: auto;
-         display: flex;
-         justify-content: space-between;
-         flex-wrap: wrap;
-         margin: 0 -23px 0 -25px;
-      }
-      &__item {
-         flex: 50% 0 1;
-         padding: 0 20px 40px;
-      }
-      &__prices {
-         font-size: 22px;
-         line-height: 30px;
-      }
-      /*
-      there is no sense of using different images for mobile/tablet/desktop as they are the same size for all those devices and we can crop the images a little at the bottom
-      */
-      &__img-wrap {
-         position: relative;
-         overflow: hidden;
-         height: 0;
-         width: 100%;
-         padding-top: 94.6%;
-      }
-      &__img {
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         width: 100%;
-         max-width: 100%;
-      }
-   }
-}
-
-@media screen and (min-width: 934px) {
-   .inner {
-      margin-left: 51px;
-      margin-right: 48px;
-   }
-
-   .card {
-      &__content {
-         padding-left: 58px;
-      }
-
-      &__title_primary {
-         display: none;
-      }
-      &__title_secondary {
-         display: block;
-         line-height: 1.1;
-         letter-spacing: 1.28px;
-      }
-
-      &__info {
-         padding-top: 12px;
-      }
-
-      &__id {
-         letter-spacing: 0.3px;
-      }
-
-      &__prices {
-         font-size: 24px;
-         line-height: 1;
-         padding-top: 21px;
-         padding-bottom: 15px;
-      }
-      &__price-full {
-         padding-right: 24px;
-      }
-      &__share-rate {
-         display: flex;
-         justify-content: flex-start;
-         align-items: center;
-         position: relative;
-      }
-      &__share {
-         padding-left: 19px;
-      }
-      &__share-open-btn {
-         display: flex;
-         letter-spacing: 0.55px;
-         cursor: pointer;
-      }
-      &__share-inner {
-         display: block;
-         position: absolute;
-         top: 42px;
-         left: 5px;
-         z-index: 1;
-         background-color: #fff;
-         padding: 13px 14px 20px 15px;
-         @include shadow(0px 0px 5px 0px rgba(0, 0, 0, 0.75));
-         opacity: 0;
-         @include transition(all 0.6s ease 0s);
-         &.show {
-            opacity: 1;
-            @include transition(all 0.6s ease 0s);
-         }
-      }
-      &__share-inner-triangle {
-         width: 30px;
-         height: 12px;
-         position: absolute;
-         overflow: hidden;
-         top: -12px;
-         left: 50%;
-         margin-left: -15px;
-         &::after {
-            content: "";
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: #fff;
-            transform: rotate(45deg); /* Prefixes... */
-            top: 7px;
-            left: 50%;
-            margin-left: -8px;
-            @include shadow(0px 0px 5px 0px rgba(0, 0, 0, 0.75));
-         }
-      }
-      &__share-inner-header {
-         display: flex;
-         justify-content: space-between;
-         margin-bottom: 15px;
-      }
-      &__share-text {
-         display: block;
-         @include font(18px, 1, $base-blue-color, 0.5px);
-         font: {
-            family: "opensans-bold";
-            weight: bold;
-         }
-      }
-      &__share-close-btn {
-         display: block;
-         position: relative;
-         width: 15px;
-         height: 15px;
-         cursor: pointer;
-         &::after,
-         &::before {
-            content: "";
-            display: block;
-            width: 4px;
-            height: 20px;
-            background-color: $base-blue-color;
-            position: absolute;
-            left: 5px;
-            top: -2px;
-         }
-         &::after {
-            @include rotate(45deg);
-         }
-         &::before {
-            @include rotate(135deg);
-         }
-      }
-      &__share-item {
-         margin-right: 13px;
-         &:nth-child(2n) {
-            margin-right: 13px;
-         }
-         &:last-child {
-            margin-right: 0;
-         }
-      }
-
-      &__descr-title {
-         display: none;
-      }
-      &__descr {
-         margin-top: 19px;
-         letter-spacing: 0.1px;
-      }
-      &__sizes-title {
-         display: none;
-      }
-      &__sizes-title-short {
-         display: block;
-         margin-right: 12px;
-      }
-
-      &__sizes {
-         display: flex;
-         align-items: center;
-         padding-top: 11px;
-      }
-      &__sizes-list {
-         margin-top: 0;
-      }
-      &__sizes-item,
-      &__sizes-item:nth-child(1),
-      &__sizes-item:nth-child(3),
-      &__sizes-item:nth-child(4) {
-         margin-left: 5px;
-         margin-right: 5px;
-      }
-
-      &__sizes-item {
-         margin-left: 5px;
-         margin-right: 5px;
-      }
-
-      &__sizes-item:nth-child(1) {
-         margin-left: 5px;
-         margin-right: 7px;
-      }
-
-      &__sizes-item:nth-child(3) {
-         margin-left: 7px;
-         margin-right: 5px;
-      }
-
-      &__sizes-item:nth-child(4) {
-         margin-left: 7px;
-         margin-right: 5px;
-      }
-
-      &__wrap {
-         padding-top: 30px;
-      }
-      &__img-wrap {
-         flex-basis: 397px;
-      }
-      &__share-list_secondary {
-         display: none;
-      }
-      &__share-list_primary {
-         display: flex;
-      }
-      &__btn-wrap {
-         padding-top: 24px;
-      }
-      &__btn {
-         width: 215px;
-         font-size: 14px;
-         padding-top: 12px;
-         padding-bottom: 14px;
-         padding-right: 2px;
-      }
-   }
-
-   .related {
-      padding-top: 60px;
-      &__title {
-         text-align: left;
-         letter-spacing: 1.75px;
-         margin-bottom: 13px;
-         padding-right: 0;
-      }
-      &__wrap {
-         margin-left: 0;
-      }
-
-      /*
-      Below I'm trying to make the layout match the html
-      I should make it like margin-left:-10px;margin-left:-10px; becauseof paddings left/right of .related__items
-      */
-      &__list {
-         margin-right: -16px;
-         margin-left: -4px;
-      }
-      &__item {
-         flex-basis: 33.333333%;
-         padding-left: 10px;
-         padding-right: 10px;
-         padding-bottom: 20px;
-      }
-      &__img-wrap {
-         padding-top: 100%;
-      }
-      &__prices {
-         font-size: 16px;
-         line-height: 22px;
-         bottom: 22px;
-         left: auto;
-         padding-left: 11px;
-         padding-right: 1px;
-      }
-      &__price-full-lined {
-         display: block;
+      & .article__pre-text {
+         background-color: #3e4148;
       }
    }
 }

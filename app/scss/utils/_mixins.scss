@@ -34,3 +34,7 @@
     color:$font-c;
     letter-spacing: $font-ls;
 }
+
+@mixin sidebar-items-indents(){
+   padding: 20px 10px 20px $menu-left-indent-desk;
+}
