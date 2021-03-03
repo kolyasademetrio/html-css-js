@@ -36,6 +36,15 @@
                <li class="sidebar__menu-item">
                   <a href="#elementqueryselector" class="sidebar__menu-link">Element.querySelector()</a>
                </li>
+               <li class="sidebar__menu-item">
+                  <a href="#nodelist" class="sidebar__menu-link">NodeList</a>
+               </li>
+               <li class="sidebar__menu-item">
+                  <a href="#htmlcollection" class="sidebar__menu-link">HTMLCollection</a>
+               </li>
+               <li class="sidebar__menu-item">
+                  <a href="#xmlhttprequest" class="sidebar__menu-link">XMLHttpRequest</a>
+               </li>
             </ul>
          </nav>
       </aside>
@@ -44,262 +53,555 @@
             <header class="header">
                <h1 class="header__title">List of questions</h1>
             </header>
-            <article id="input-vs-button" class="article">
-               <h2 class="article__title">Tag input vs tag button</h2>
-               <section class="article__content">
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Основные отличия
-                     </h3>
-                     <div class="article__subsection-content">
-                        <p class="article__subsection-text">
-                           Тег <strong>&lt;button&gt;</strong> по умолчанию имеет <strong>type="submit"</strong> и он
-                           отправляет форму.
-                        </p>
-                        <p class="article__subsection-text">
-                           Тег <strong>&lt;input&gt;</strong> по умолчанию имеет <strong>type="text"</strong> и чтобы
-                           это
-                           была кнопка отправляющая форму тег должен иметь <strong>type="submit"</strong>
-                        </p>
-                        <p class="article__subsection-text">
-                           Чтобы убрать у тегов <strong>&lt;input&gt;</strong> и <strong>&lt;button&gt;</strong>
-                           предопределенное поведение они должны иметь <strong>type="button"</strong> <br>
-                           (It can have client-side scripts associated with the element's events, which are triggered
-                           when
-                           the events occur.)
-                        </p>
-                        <p class="article__subsection-text">
-                           Если у тегов <strong>&lt;input&gt;</strong> и <strong>&lt;button&gt;</strong> назначен
-                           <strong>form="id-of-related-form-to-submit"</strong> и <strong>type="submit"</strong>, то
-                           кнопки
-                           могут лежать в любом месте документа и при этом отправлять форму у которой
-                           <strong>id="id-of-related-form-to-submit"</strong>
-                        </p>
-                     </div>
+            <div class="articles">
+               <article id="input-vs-button" class="article">
+                  <h2 class="article__title">Tag input vs tag button</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основные отличия
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              Тег <strong>&lt;button&gt;</strong> по умолчанию имеет <strong>type="submit"</strong> и он
+                              отправляет форму.
+                           </p>
+                           <p class="article__subsection-text">
+                              Тег <strong>&lt;input&gt;</strong> по умолчанию имеет <strong>type="text"</strong> и чтобы
+                              это
+                              была кнопка отправляющая форму тег должен иметь <strong>type="submit"</strong>
+                           </p>
+                           <p class="article__subsection-text">
+                              Чтобы убрать у тегов <strong>&lt;input&gt;</strong> и <strong>&lt;button&gt;</strong>
+                              предопределенное поведение они должны иметь <strong>type="button"</strong> <br>
+                              (It can have client-side scripts associated with the element's events, which are triggered
+                              when
+                              the events occur.)
+                           </p>
+                           <p class="article__subsection-text">
+                              Если у тегов <strong>&lt;input&gt;</strong> и <strong>&lt;button&gt;</strong> назначен
+                              <strong>form="id-of-related-form-to-submit"</strong> и <strong>type="submit"</strong>, то
+                              кнопки
+                              могут лежать в любом месте документа и при этом отправлять форму у которой
+                              <strong>id="id-of-related-form-to-submit"</strong>
+                           </p>
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/button" target="_blank"
+                                 class="article__link">Читать про тег <strong>button</strong> на
+                                 developer.mozilla.org</a>
+                           </p>
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input" target="_blank"
+                                 class="article__link">Читать про тег <strong>input</strong> на
+                                 developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <aside class="article__links">
-                     <h3 class="article__links-title">
-                        Ссылки
-                     </h3>
-                     <div class="article__links-content">
-                        <p class="article__links-text">
-                           <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/button" target="_blank"
-                              class="article__link">Читать про тег <strong>button</strong> на developer.mozilla.org</a>
-                        </p>
-                        <p class="article__links-text">
-                           <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input" target="_blank"
-                              class="article__link">Читать про тег <strong>input</strong> на developer.mozilla.org</a>
-                        </p>
-                     </div>
-                  </aside>
-               </section>
-            </article>
+               </article>
 
-            <article id="queryselectorall" class="article article_dark">
-               <h2 class="article__title">Document.querySelectorAll()</h2>
-               <section class="article__content">
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Основная информация
-                     </h3>
-                     <div class="article__subsection-content">
-                        <p class="article__subsection-text">
-                           Метод <strong>querySelectorAll()</strong> Document возвращает <strong>статический (не
-                              динамический)</strong> NodeList, <strong>содержащий все найденные элементы</strong>
-                           документа, которые соответствуют указанному селектору.
-                        </p>
-                        <p class="article__subsection-text">
-                           <i>Статическая коллекция означает что любые изменения в DOM не отражаются на его
-                              содержании.</i>
-                        </p>
-                        <p class="article__subsection-text">
-                           <strong>Примечание:</strong> Если в строке selectors содержатся CSS псевдоэлементы, то
-                           возвращаемый список будет всегда пуст.
-                        </p>
-                        <!-- <p class="article__subsection-text">
-                           
-                        </p> -->
-                     </div>
-                  </section>
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Примеры:
-                     </h3>
-                     <div class="article__subsection-content">
-                        <pre
-                           class="article__pre-text">const matches = document.querySelectorAll("div.note, div.alert");</pre>
-                        <pre class="article__pre-text">
-matches.forEach(function(item) {
-   // do something
-});</pre>
-                        <pre class="article__pre-text">
-&lt;div class="outer"&gt;
-   &lt;div class="select"&gt;
-      &lt;div class="inner"&gt;
+               <article id="queryselectorall" class="article">
+                  <h2 class="article__title">Document.querySelectorAll()</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              Метод <strong>querySelectorAll()</strong> Document возвращает <strong>статический (не
+                                 динамический)</strong> NodeList, <strong>содержащий все найденные элементы</strong>
+                              документа, которые соответствуют указанному селектору.
+                           </p>
+                           <p class="article__subsection-text">
+                              <i>Статическая коллекция означает что любые изменения в DOM не отражаются на его
+                                 содержании.</i>
+                           </p>
+                           <p class="article__subsection-text">
+                              <strong>Объект NodeList</strong> — это коллекция узлов, возвращаемая такими методами, как
+                              <strong>Node.childNodes</strong> и <strong>document.querySelectorAll</strong>.
+                           </p>
+                           <p class="article__subsection-text">
+                              Несмотря на то, что <strong>NodeList не является массивом</strong> ( Array ), <strong>его
+                                 вполне возможно перебрать</strong> при помощи метода <strong>forEach()</strong>.
+                              NodeList также можно конвертировать в Array при помощи <strong>Array.from()</strong>
+                           </p>
+                           <p class="article__subsection-text">
+                              Однако <strong>некоторые старые браузеры</strong> на данный момент все еще <strong>не
+                                 поддерживают NodeList.forEach()</strong> или <strong>Array.from()</strong>. Данные
+                              ограничения можно обойти, используя <strong>Array.prototype.forEach()</strong>
+                           </p>
+                           <p class="article__subsection-text">
+                              В определённых случаях <strong>NodeList</strong> может являться <strong>динамической
+                                 коллекцией</strong>. Это означает, что любые изменения в DOM тут же отражаются на
+                              коллекции. <strong>Примером</strong> подобной коллекции является
+                              <strong>Node.childNodes</strong>
+                           </p>
+                           <p class="article__subsection-text">
+                              В других случаях <strong>NodeList</strong> является <strong>статической
+                                 коллекцией</strong>. Это означает, что любые изменения в DOM не отражаются на его
+                              содержании. К примеру, <strong>document.querySelectorAll возвращает статический
+                                 NodeList</strong>.
+                           </p>
+                           <p class="article__subsection-text">
+                              <strong>Примечание:</strong> Если в строке selectors содержатся CSS псевдоэлементы, то
+                              возвращаемый список будет всегда пуст.
+                           </p>
+                        </div>
+                     </section>
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre
+                              class="article__pre-text">const matches = document.querySelectorAll("div.note, div.alert");</pre>
+                           <pre class="article__pre-text">
+   matches.forEach(function(item) {
+      // do something
+   });</pre>
+                           <pre class="article__pre-text">
+   &lt;div class="outer"&gt;
+      &lt;div class="select"&gt;
+         &lt;div class="inner"&gt;
+         &lt;/div&gt;
       &lt;/div&gt;
    &lt;/div&gt;
-&lt;/div&gt;
+   
+   const select = document.querySelector('.select');
+   const inner = select.querySelectorAll('.outer .inner');
+   inner.length; // 1, не 0!</pre>
+                           <p class="article__subsection-text">
+                              ".inner" был всё равно найден, хотя .outer не является потомком элемента в котором
+                              происходил
+                              поиск (".select"). По-умолчанию, querySelectorAll() проверяет только последний элемент без
+                              учёта контекста.
+                           </p>
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll"
+                                 target="_blank" class="article__link">Читать про
+                                 <strong>document.querySelectorAll()</strong> на developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
+                  </section>
+               </article>
 
-const select = document.querySelector('.select');
-const inner = select.querySelectorAll('.outer .inner');
-inner.length; // 1, не 0!</pre>
-                        <p class="article__subsection-text">
-                           ".inner" был всё равно найден, хотя .outer не является потомком элемента в котором происходил
-                           поиск (".select"). По-умолчанию, querySelectorAll() проверяет только последний элемент без
-                           учёта контекста.
-                        </p>
-                     </div>
+               <article id="elementqueryselectorall" class="article">
+                  <h2 class="article__title">Element.querySelectorAll()</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              Метод <strong>element.querySelectorAll()</strong> возвращает <strong>список типа
+                                 NodeList</strong>, состоящий из <strong>всех элементов, которые являются потомками для
+                                 элемента</strong>, над которым была выполнена функция и удовлетворяющим условию
+                              выборки.
+                           </p>
+                        </div>
+                     </section>
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre class="article__pre-text">
+   const el = document.querySelector('#test');
+   
+   const matches = el.querySelectorAll('div.highlighted > p');</pre>
+                           <p class="article__subsection-text">
+                              Этот пример возвращает список всех элементов с тегом p, которые находятся непосредственно
+                              в
+                              элементах-контейнерах с тегом div, имеющих класс 'highlighted', которые в свою очередь
+                              находятся внутри элемента с идентификатором 'test'
+                           </p>
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/querySelectorAll"
+                                 target="_blank" class="article__link">Читать про
+                                 <strong>element.querySelectorAll()</strong> на developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <aside class="article__links">
-                     <h3 class="article__links-title">
-                        Ссылки
-                     </h3>
-                     <div class="article__links-content">
-                        <p class="article__links-text">
-                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll"
-                              target="_blank" class="article__link">Читать про
-                              <strong>document.querySelectorAll()</strong> на developer.mozilla.org</a>
-                        </p>
-                     </div>
-                  </aside>
-               </section>
-            </article>
+               </article>
 
-            <article id="elementqueryselectorall" class="article">
-               <h2 class="article__title">Element.querySelectorAll()</h2>
-               <section class="article__content">
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Основная информация
-                     </h3>
-                     <div class="article__subsection-content">
-                        <p class="article__subsection-text">
-                           Метод <strong>element.querySelectorAll()</strong> возвращает <strong>список типа
-                              NodeList</strong>, состоящий из <strong>всех элементов, которые являются потомками для
-                              элемента</strong>, над которым была выполнена функция и удовлетворяющим условию выборки.
-                        </p>
-                     </div>
+               <article id="queryselector" class="article">
+                  <h2 class="article__title">Document.querySelector()</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              Метод <strong>querySelector()</strong> возвращает <strong>первый элемент
+                                 документа</strong>,
+                              который соответствует указанному селектору или группе селекторов. Если совпадений не
+                              найдено,
+                              возвращает значение <strong>null</strong>.
+                           </p>
+                           <p class="article__subsection-text">
+                              Если указанный селектор соответствует идентификатору, который неправильно используется
+                              более
+                              одного раза в документе, возвращается первый элемент с этим идентификатором.
+                           </p>
+                           <p class="article__subsection-text">
+                              Псевдо-элементы CSS никогда не вернут никаких элементов, как указано в API селекторов.
+                           </p>
+                        </div>
+                     </section>
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre class="article__pre-text">const el = document.querySelector(".myclass");
+   
+   const el = document.querySelector("div.user-panel.main input[name=login]");</pre>
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector"
+                                 target="_blank" class="article__link">Читать про
+                                 <strong>document.querySelector()</strong> на developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Примеры:
-                     </h3>
-                     <div class="article__subsection-content">
-                        <pre class="article__pre-text">
-const el = document.querySelector('#test');
+               </article>
 
-const matches = el.querySelectorAll('div.highlighted > p');</pre>
-                        <p class="article__subsection-text">
-                           Этот пример возвращает список всех элементов с тегом p, которые находятся непосредственно в
-                           элементах-контейнерах с тегом div, имеющих класс 'highlighted', которые в свою очередь
-                           находятся внутри элемента с идентификатором 'test'
-                        </p>
-                     </div>
+               <article id="elementqueryselector" class="article">
+                  <h2 class="article__title">Element.querySelector()</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              Метод <strong>element.querySelector()</strong> возвращает <strong>первый элемент,
+                                 являющийся
+                                 потомком элемента</strong>, на который применено правило указанной группы селекторов.
+                           </p>
+                           <p class="article__subsection-text">
+                              <strong>Возвращает null если совпадения не найдены</strong>, иначе первый найденный
+                              элемент.
+                           </p>
+                        </div>
+                     </section>
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre
+                              class="article__pre-text">const el = document.body.querySelector("style[type='text/css'], style:not([type])");</pre>
+                           <p class="article__subsection-text">
+                              Данный пример получает первый элемент style, который не имеет атрибута type или этот
+                              атрибут равен text/css, в теле (body) HTML документа
+                           </p>
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/querySelector"
+                                 target="_blank" class="article__link">Читать про
+                                 <strong>element.querySelector()</strong> на developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <aside class="article__links">
-                     <h3 class="article__links-title">
-                        Ссылки
-                     </h3>
-                     <div class="article__links-content">
-                        <p class="article__links-text">
-                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/querySelectorAll"
-                              target="_blank" class="article__link">Читать про
-                              <strong>element.querySelectorAll()</strong> на developer.mozilla.org</a>
-                        </p>
-                     </div>
-                  </aside>
-               </section>
-            </article>
+               </article>
 
-            <article id="queryselector" class="article article_dark">
-               <h2 class="article__title">Document.querySelector()</h2>
-               <section class="article__content">
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Основная информация
-                     </h3>
-                     <div class="article__subsection-content">
-                        <p class="article__subsection-text">
-                           Метод <strong>querySelector()</strong> возвращает <strong>первый элемент документа</strong>,
-                           который соответствует указанному селектору или группе селекторов. Если совпадений не найдено,
-                           возвращает значение <strong>null</strong>.
-                        </p>
-                        <p class="article__subsection-text">
-                           Если указанный селектор соответствует идентификатору, который неправильно используется более
-                           одного раза в документе, возвращается первый элемент с этим идентификатором.
-                        </p>
-                        <p class="article__subsection-text">
-                           Псевдо-элементы CSS никогда не вернут никаких элементов, как указано в API селекторов.
-                        </p>
-                     </div>
+               <article id="nodelist" class="article">
+                  <h2 class="article__title">NodeList</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              Объект <strong>NodeList</strong> — это коллекция узлов, возвращаемая такими методами, как
+                              <strong>Node.childNodes</strong> и
+                              <strong>document.querySelectorAll</strong>.
+                           </p>
+                           <p class="article__subsection-text">
+                              Несмотря на то, что <strong>NodeList не является массивом</strong> ( Array ), его вполне
+                              <strong>возможно перебрать</strong>
+                              при помощи метода <strong>forEach()</strong>. <strong>NodeList</strong> также можно
+                              <strong>конвертировать в Array</strong> при помощи
+                              <strong>Array.from()</strong>
+                           </p>
+                           <p class="article__subsection-text">
+                              Однако <strong>некоторые старые браузеры</strong> на данный момент все еще <strong>не
+                                 поддерживают
+                                 NodeList.forEach()</strong> или <strong>Array.from()</strong>. Данные ограничения
+                              <strong>можно обойти</strong>, используя
+                              <strong>Array.prototype.forEach()</strong>.
+                           </p>
+                           <p class="article__subsection-text">
+                              В определённых случаях <strong>NodeList</strong> может являться <strong>динамической
+                                 коллекцией</strong>. Это означает, что любые изменения в DOM тут же отражаются на
+                              коллекции. Примером подобной коллекции является Node.childNodes.
+                           </p>
+                           <p class="article__subsection-text">
+                              <strong>В других случаях NodeList является статической коллекцией</strong>. Это означает,
+                              что любые изменения в DOM не отражаются на его содержании.<strong> К примеру,
+                                 document.querySelectorAll возвращает статический NodeList</strong>.
+                           </p>
+                        </div>
+                     </section>
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre class="article__pre-text">
+var parent = document.getElementById('parent');
+var child_nodes = parent.childNodes;
+console.log(child_nodes.length); // пусть равно "2"
+parent.appendChild(document.createElement('div'));
+console.log(child_nodes.length); // выведет "3"</pre>
+                           <!-- <p class="article__subsection-text"></p> -->
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/NodeList" target="_blank"
+                                 class="article__link">Читать про
+                                 <strong>NodeList</strong> на developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Примеры:
-                     </h3>
-                     <div class="article__subsection-content">
-                        <pre class="article__pre-text">const el = document.querySelector(".myclass");
+               </article>
 
-const el = document.querySelector("div.user-panel.main input[name=login]");</pre>
-                     </div>
+               <article id="htmlcollection" class="article">
+                  <h2 class="article__title">HTMLCollection</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              <strong>HTMLCollection</strong>, хранящая элементы DOM, является
+                              <strong>динамической</strong>. <strong>При изменении документа она моментально отражает
+                                 все произведённые изменения</strong>.
+                           </p>
+                        </div>
+                     </section>
+                     <!-- <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre
+                              class="article__pre-text"></pre>
+                           <p class="article__subsection-text"></p>
+                        </div>
+                     </section> -->
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLCollection" target="_blank"
+                                 class="article__link">Читать про
+                                 <strong>HTMLCollection</strong> на developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <aside class="article__links">
-                     <h3 class="article__links-title">
-                        Ссылки
-                     </h3>
-                     <div class="article__links-content">
-                        <p class="article__links-text">
-                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector"
-                              target="_blank" class="article__link">Читать про
-                              <strong>document.querySelector()</strong> на developer.mozilla.org</a>
-                        </p>
-                     </div>
-                  </aside>
-               </section>
-            </article>
+               </article>
 
-            <article id="elementqueryselector" class="article">
-               <h2 class="article__title">Element.querySelector()</h2>
-               <section class="article__content">
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Основная информация
-                     </h3>
-                     <div class="article__subsection-content">
-                        <p class="article__subsection-text">
-                           Метод <strong>element.querySelector()</strong> возвращает <strong>первый элемент, являющийся
-                              потомком элемента</strong>, на который применено правило указанной группы селекторов.
-                        </p>
-                        <p class="article__subsection-text">
-                           <strong>Возвращает null если совпадения не найдены</strong>, иначе первый найденный элемент.
-                        </p>
-                     </div>
+               <article id="xmlhttprequest" class="article">
+                  <h2 class="article__title">XMLHttpRequest</h2>
+                  <section class="article__content">
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Основная информация
+                        </h3>
+                        <div class="article__subsection-content">
+                           <p class="article__subsection-text">
+                              <strong>XMLHttpRequest</strong> это <strong>API</strong>, который предоставляет клиенту
+                              функциональность для обмена данными между клиентом и сервером. Данный <strong>API</strong>
+                              предоставляет простой способ получения данных по ссылке <strong>без перезагрузки
+                                 страницы</strong>. Это позволяет обновлять только часть веб-страницы не прерывая
+                              пользователя. XMLHttpRequest используется в AJAX запросах и особенно в single-page
+                              приложениях.
+                           </p>
+                           <p class="article__subsection-text">
+                              <strong>XMLHttpRequest может быть использован для получения любых типов данных</strong>,
+                              не только XML, и <strong>поддерживает протоколы помимо HTTP (включая file и ftp)</strong>.
+                           </p>
+                           <p class="article__subsection-text">
+                              Чтобы начать работать с XMLHttpRequest, выполните этот код:
+                           </p>
+                           <div class="article__subsection-content">
+                              <pre class="article__pre-text">var myRequest = new XMLHttpRequest();</pre>
+                           </div>
+                           <p class="article__subsection-text">
+                              <strong>open()</strong> чтобы инициализировать запрос:
+                           </p>
+                           <div class="article__subsection-content">
+                              <pre
+                                 class="article__pre-text">myRequest.open(DOMString method, DOMString url, optional boolean async, optional DOMString user, optional DOMString password)</pre>
+                           </div>
+                           <p class="article__subsection-text">
+                              <strong>XMLHttpRequest.responseType</strong> Свойство является перечислимым значением,
+                              которое <strong>возвращает тип ответа</strong>. Он также позволяет автору изменять тип
+                              ответа. <strong>Если значение не задано</strong>, будет использовано <strong>значение по
+                                 умолчанию text</strong>. Установка значения responseType в «document» игнорируется,
+                              если выполняется в рабочей среде.
+                           </p>
+                           <p class="article__subsection-text">
+                              При настройке <strong>responseType</strong> на определенное значение автор должен
+                              убедиться, что сервер действительно отправляет ответ, совместимый с этим форматом. Если
+                              сервер возвращает данные, которые не совместимы с установленным responseType, значение
+                              response будет null. Кроме того, установка responseType для синхронных запросов вызовет
+                              исключение InvalidAccessError.
+                           </p>
+                           <p class="article__subsection-text">
+                              <strong>Поддерживаемые значения responseType</strong>:
+                           </p>
+                           <div class="article__subsection-content">
+                              <pre class="article__pre-text">
+"" - DOMString (this is the default value)
+
+"arraybuffer" - ArrayBuffer
+
+"blob" - Blob
+
+"document" - Document
+
+"json" - JSON
+
+"text" - DOMString</pre>
+                           </div>
+                           <p class="article__subsection-text">
+                              <strong>setRequestHeader()</strong> Устанавливает значение заголовка HTTP-запроса. Вы
+                              должны вызвать setRequestHeader() <strong>после open(), но перед send()</strong>. Если
+                              <strong>данный метод вызывается несколько</strong> раз с одним и тем же заголовком, все
+                              <strong>значения объеденяются в один заголовок</strong> запроса.:
+                           </p>
+                           <div class="article__subsection-content">
+                              <pre
+                                 class="article__pre-text">myRequest.setRequestHeader(DOMString header, DOMString value)</pre>
+                           </div>
+                           <p class="article__subsection-text">
+                              Метод <strong>XMLHttpRequest.send()</strong> отправляет запрос. <strong>Если запрос асинхронный (каким он является по-умолчанию)</strong>, то <strong>возврат из данного метода</strong> происходит <strong>сразу после отправления запроса</strong>. <strong>Если запрос синхронный</strong>, то метод возвращает управление <strong>только после получения ответа</strong>. Метод <strong>send()</strong> принимает <strong>необязательные аргументы в тело запросов</strong>. Если метод запроса GET или HEAD, то аргументы игнорируются и тело запроса устанавливается в null.
+                           </p>
+                           <p class="article__subsection-text">
+                              Если заголовок Accept не был задан с помощью setRequestHeader(), будет отправлено значение Accept по-умолчанию */*.
+                           </p>
+                           <div class="article__subsection-content">
+                              <pre
+                                 class="article__pre-text">XMLHttpRequest.send(body)</pre>
+                           </div>
+                        </div>
+                     </section>
+                     <section class="article__subsection">
+                        <h3 class="article__subsection-title">
+                           Примеры:
+                        </h3>
+                        <div class="article__subsection-content">
+                           <pre class="article__pre-text">
+const url = 'https://jsonplaceholder.typicode.com/todos';
+
+function promise(method, url, body = null){
+   return new Promise((resolve, reject)=>{
+      const xhr = new XMLHttpRequest();
+      
+      xhr.open(method, url);
+
+      xhr.responseType = 'json';
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onerror = ()=>{
+      reject(xhr.response);
+      };
+
+      xhr.onload = ()=>{
+      if(xhr.status >= 400){
+         reject(xhr.response)
+      } else {
+         resolve(xhr.response);
+      }
+      };
+
+      xhr.send(JSON.stringify(body));
+   });
+}
+
+const body = {
+   id: '250',
+   name: 'test name'
+};
+
+promise('POST', url, body)
+   .then(data => console.log(data))
+   .catch(error => console.log(error));
+
+promise('GET', url)
+   .then(data => console.log(data))
+   .catch(error => console.log(error));</pre>
+                        </div>
+                     </section>
+                     <aside class="article__links">
+                        <h3 class="article__links-title">
+                           Ссылки
+                        </h3>
+                        <div class="article__links-content">
+                           <p class="article__links-text">
+                              <a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest" target="_blank"
+                                 class="article__link">Читать про <strong>XMLHttpRequest</strong> на
+                                 developer.mozilla.org</a>
+                           </p>
+                        </div>
+                     </aside>
                   </section>
-                  <section class="article__subsection">
-                     <h3 class="article__subsection-title">
-                        Примеры:
-                     </h3>
-                     <div class="article__subsection-content">
-                        <pre class="article__pre-text">const el = document.body.querySelector("style[type='text/css'], style:not([type])");</pre>
-                        <p class="article__subsection-text">
-                           Данный пример получает первый элемент style, который не имеет атрибута type или этот атрибут равен text/css, в теле (body) HTML документа
-                        </p>
-                     </div>
-                  </section>
-                  <aside class="article__links">
-                     <h3 class="article__links-title">
-                        Ссылки
-                     </h3>
-                     <div class="article__links-content">
-                        <p class="article__links-text">
-                           <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/querySelector"
-                              target="_blank" class="article__link">Читать про
-                              <strong>element.querySelector()</strong> на developer.mozilla.org</a>
-                        </p>
-                     </div>
-                  </aside>
-               </section>
-            </article>
+               </article>
+            </div>
          </div>
       </main>
    </div>

@@ -107,10 +107,10 @@ img { width: 100%; max-width: 100%; height: auto; vertical-align: middle; }
 
 .article__links-text:last-child { margin-bottom: 0; }
 
-.article_dark { background-color: #383b42; }
+.article_dark, .article:nth-child(2n) { background-color: #383b42; }
 
-.article_dark * { color: #f6f6f6; }
+.article_dark *, .article:nth-child(2n) * { color: #f6f6f6; }
 
-.article_dark .article__pre-text { background-color: #3e4148; }
+.article_dark .article__pre-text, .article:nth-child(2n) .article__pre-text { background-color: #3e4148; }
 
 /*# sourceMappingURL=style.css.map */
